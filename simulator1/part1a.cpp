@@ -1,13 +1,15 @@
+#include <cstdlib>
 #include <iostream> 
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctime>
 
 class Part1 {
-    int numBlocks;
-    int allocated = 0;
-    int * memoryBlocks;
-    int block = 0;
+    private:
+        int numBlocks;
+        int allocated = 0;
+        int * memoryBlocks;
+        int block = 0;
     public: Part1(){
         srand((unsigned) time(0));
         this->numBlocks = 11 + (rand() % 990);
@@ -19,7 +21,7 @@ class Part1 {
         }
         this->memoryBlocks =  mem;
         for (int j = 0; j < this->numBlocks; j++) {
-            printf("[%d]\n", this->memoryBlocks[j]);
+            //printf("[%d]\n", this->memoryBlocks[j]);
         }
     }
 
@@ -54,14 +56,31 @@ class Part1 {
         return prob;
     }
 
+    static void testSim(int n, Part1 test) {
+        double reqProb = -1;
+        while (n > 0 && reqProb != 0) { 
+            reqProb = test.req();
+
+            int f = (rand() % 5);
+            while (f > 0) {
+                double freeS = test.free();
+                printf("%f,%f,%d \n", reqProb, freeS, test.size());
+                f--;
+            }
+            n--;
+        }
+    }
+
 };
 
 int main() {
     Part1 test = Part1();
-    std::cout << test.req();
-    printf("testing the size() function gives %d \n",test.size());
-    std::cout << test.req();
-    std::cout << test.req();
-    printf("testing the free() function gives %d percent chance of having free space when a block is removed",int(100*test.free()));
+    //std::cout << test.req();
+    //printf("testing the size() function gives %d \n",test.size());
+    //std::cout << test.req();
+    //std::cout << test.req();
+    //printf("testing the free() function gives %d percent chance of having free space when a block is removed",int(100*test.free()));
+    for (int i = 0; i < 256; i++)
+        test.testSim( 256, test);
     return 0;
 }
