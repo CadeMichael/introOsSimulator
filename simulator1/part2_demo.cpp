@@ -12,7 +12,7 @@ using namespace std;
 
     Part1 test = Part1();
     //first fit 
-    int allocate_process (int size, int PID, int memory [], int numBlocks, int memorySize [], int processSize[]) {
+    int allocate_process (int size, int PID, int numBlocks,int memory[], int memorySize [], int processSize[]) {
         int i;
         for (i = 0; i < numBlocks; i++) {
             if (memory[i] == -1 && memorySize[i] >= size) {
@@ -22,15 +22,15 @@ using namespace std;
             }
         }
         if (i >= numBlocks) {
-            printf("Process was not allocated");
+            printf("Process was not allocated\n");
             return size;
         }
     
-        printf("request at t=%d for i=%d, size(i)=%d pages, satisfied by free block of size %d", time(NULL), size, test.size(), memorySize[i]);
+        printf("request at t=%d for i=%d, size(i)=%d pages, satisfied by free block of size %d\n", int(clock()), size, test.size(), memorySize[i]);
         return 0;
     }
     
-    int degreeFragmentation(int processSize[], int numBlocks, int memory[], int memorySize[]) {
+    int degreeFragmentation(int numBlocks, int memory[], int memorySize[], int processSize[]) {
         int fragmentation = 0;
         for (int i = 0; i < numBlocks; i++) {
             if (memory[i] != -1){
@@ -39,7 +39,7 @@ using namespace std;
         }
         return fragmentation / numBlocks;
     }
-    int deallocate_process (int PID, int processSize [],int numBlocks, int memory[], int memorySize[]) {
+    int deallocate_process (int PID,int numBlocks, int memory[], int memorySize[], int processSize[]) {
         int i;
         for (i = 0; i < numBlocks; i++) {
             if (memory[i] == PID) {
@@ -47,8 +47,6 @@ using namespace std;
                 processSize[i] = 0;
             }
         }
-    
-        cout << "Degree of Fragmentation: " << degreeFragmentation(processSize,numBlocks,memory,memorySize) << endl;
     
     
         return 0;
@@ -80,25 +78,30 @@ int main()
 
 
     int PID = 0;
-    for (int n = 0; n < rand()%10; n++) {
-        int numProcess = rand() % 64;
+    for (int n = 0; n < rand() % 20; n++) {
+        int numProcess = rand() % 25;
         for (int i = 0; i < numProcess; i++) {
 
-            allocate_process(20 + rand() % 400, ++PID);
-            currentProcesses.insert(PID);
+            allocate_process(20 + rand() % 400, ++PID, numBlocks, memory, memorySize, processSize);
+            currentProcesses.push_front(PID);
 
         }
-        for (int d = 0; d < rand() % 7; d++) {
-            deallocate_process(currentProcesses.back());
-            currentProcesses.pop_back();
+        for (int d = 0; d < rand() % 15; d++) {
+            if (!currentProcesses.empty()) {
+                deallocate_process(currentProcesses.back(), numBlocks, memory, memorySize, processSize);
+                currentProcesses.pop_back();
+            }
         }
+        cout << "Degree of Fragmentation: " << degreeFragmentation(numBlocks,memory,memorySize, processSize) << endl;
 
     }
 
     while (!currentProcesses.empty()) {
-        deallocate_process(currentProcesses.back());
+        deallocate_process(currentProcesses.back(), numBlocks, memory, memorySize, processSize);
         currentProcesses.pop_back();
     }
+
+    
 
     return 0;
 
