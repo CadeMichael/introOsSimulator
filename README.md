@@ -10,6 +10,9 @@
 > we both worked with eachother on the respective parts to edit/ offer suggestions it was a very 50/50 partnership.
 
 
+>Part 2 uses First Fit allocation algorithm to allocate the incoming processes to memory
+>Memory size and block size is randomized (in between a set range) each time it is run to simulate different sized memory
+>The amount and size of incoming processes is also randomized
 > Sample Outputs for Part 2
 > 1
 ```request at t=1660 for i=230, size(i)=10 pages, satisfied by free block of size 424                                                               
