@@ -46,10 +46,12 @@ class Part1 {
         // block is some random chunk of memory 0 ~ all of the memory 
         // if there is more memory in block than is free return 1
         // as all memory should be free 
-        if (this->block > (this->numBlocks - this->allocated))
-            return 1;
-        int newBlock = (rand() % this->numBlocks);
-        return (double(newBlock) / (this->numBlocks - this->allocated - this->block));
+        if (this->allocated <= 0)
+            return 0;
+        int currentBlock = (rand() % this->allocated);
+        double prob = (double(currentBlock) / this->allocated);
+        allocated -= currentBlock;
+        return prob;
     }
 
 };
