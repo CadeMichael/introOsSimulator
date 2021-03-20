@@ -11,7 +11,7 @@ class Part1 {
         int * memoryBlocks;
         int block = 0;
     public: Part1(){
-        srand((unsigned) time(0));
+        srand((unsigned) time(NULL));
         this->numBlocks = 11 + (rand() % 990);
         int mem[this->numBlocks]; 
         // initialize the array of "memory" 
@@ -43,6 +43,9 @@ class Part1 {
         int n = block % 20; // page size is 50 so we %20 as it will yeild a min of 1 or max of 20
         return n;
     }
+    int size(int chunk) {
+        return chunk % 20;
+    }
 
     double free() {
         // block is some random chunk of memory 0 ~ all of the memory 
@@ -51,6 +54,14 @@ class Part1 {
         if (this->allocated <= 0)
             return 0;
         int currentBlock = (rand() % this->allocated);
+        double prob = (double(currentBlock) / this->allocated);
+        allocated -= currentBlock;
+        return prob;
+    }
+
+    double free(int currentBlock) {
+        if (this->allocated <= 0)
+            return 0;
         double prob = (double(currentBlock) / this->allocated);
         allocated -= currentBlock;
         return prob;

@@ -26,7 +26,7 @@ using namespace std;
             return size;
         }
     
-        printf("request at t=%d for i=%d, size(i)=%d pages, satisfied by free block of size %d\n", int(clock()), size, test.size(), memorySize[i]);
+        printf("request at t=%d for i=%d, size(i)=%d pages, satisfied by free block of size %d\n", int(clock()), size, test.size(size), memorySize[i]);
         return 0;
     }
     
@@ -39,6 +39,7 @@ using namespace std;
         }
         return fragmentation / numBlocks;
     }
+
     int deallocate_process (int PID,int numBlocks, int memory[], int memorySize[], int processSize[]) {
         int i;
         for (i = 0; i < numBlocks; i++) {
