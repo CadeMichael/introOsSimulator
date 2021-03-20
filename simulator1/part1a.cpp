@@ -73,6 +73,7 @@ class Part1 {
 
 };
 
+/*
 int main() {
     Part1 test = Part1();
     //std::cout << test.req();
@@ -84,3 +85,4 @@ int main() {
         test.testSim( 256, test);
     return 0;
 }
+*/
