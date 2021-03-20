@@ -10,7 +10,7 @@
 > we both worked with eachother on the respective parts to edit/ offer suggestions it was a very 50/50 partnership.
 
 
-> Example Outputs for Part 2
+> Sample Outputs for Part 2
 > 1
 ```request at t=1660 for i=230, size(i)=10 pages, satisfied by free block of size 424                                                               
 request at t=1718 for i=146, size(i)=6 pages, satisfied by free block of size 223                                                                
@@ -72,5 +72,49 @@ request at t=2251 for i=389, size(i)=9 pages, satisfied by free block of size 39
 request at t=2277 for i=273, size(i)=13 pages, satisfied by free block of size 305                                                               
 request at t=2282 for i=419, size(i)=19 pages, satisfied by free block of size 433                                                               
 Degree of Fragmentation: 42                                                                                                                      
-Degree of Fragmentation: 0   ```
+Degree of Fragmentation: 0   
+```
 > 2
+```
+request at t=1642 for i=144, size(i)=4 pages, satisfied by free block of size 417                                                                
+request at t=1700 for i=278, size(i)=18 pages, satisfied by free block of size 403                                                               
+request at t=1705 for i=114, size(i)=14 pages, satisfied by free block of size 242                                                               
+request at t=1708 for i=62, size(i)=2 pages, satisfied by free block of size 93                                                                  
+Degree of Fragmentation: 2                                                                                                                       
+request at t=1727 for i=291, size(i)=11 pages, satisfied by free block of size 412                                                               
+Degree of Fragmentation: 2                                                                                                                       
+request at t=1735 for i=98, size(i)=18 pages, satisfied by free block of size 417                                                                
+request at t=1738 for i=29, size(i)=9 pages, satisfied by free block of size 92                                                                  
+request at t=1741 for i=252, size(i)=12 pages, satisfied by free block of size 322                                                               
+request at t=1744 for i=276, size(i)=16 pages, satisfied by free block of size 288                                                               
+request at t=1773 for i=130, size(i)=10 pages, satisfied by free block of size 236                                                               
+request at t=1779 for i=106, size(i)=6 pages, satisfied by free block of size 246                                                                
+request at t=1783 for i=92, size(i)=12 pages, satisfied by free block of size 142                                                                
+Degree of Fragmentation: 7                                                                                                                       
+request at t=1815 for i=60, size(i)=0 pages, satisfied by free block of size 133                                                                 
+request at t=1818 for i=303, size(i)=3 pages, satisfied by free block of size 368                                                                
+request at t=1821 for i=248, size(i)=8 pages, satisfied by free block of size 346                                                                
+request at t=1825 for i=355, size(i)=15 pages, satisfied by free block of size 392                                                               
+request at t=1829 for i=76, size(i)=16 pages, satisfied by free block of size 109                                                                
+request at t=1856 for i=184, size(i)=4 pages, satisfied by free block of size 249                                                                
+request at t=1904 for i=324, size(i)=4 pages, satisfied by free block of size 462                                                                
+request at t=1933 for i=65, size(i)=5 pages, satisfied by free block of size 111                                                                 
+request at t=1937 for i=190, size(i)=10 pages, satisfied by free block of size 218                                                               
+request at t=1940 for i=400, size(i)=0 pages, satisfied by free block of size 428                                                                
+request at t=1943 for i=324, size(i)=4 pages, satisfied by free block of size 339                                                                
+request at t=1946 for i=284, size(i)=4 pages, satisfied by free block of size 299                                                                
+request at t=1949 for i=42, size(i)=2 pages, satisfied by free block of size 116                                                                 
+request at t=1951 for i=281, size(i)=1 pages, satisfied by free block of size 324                                                                
+request at t=1955 for i=316, size(i)=16 pages, satisfied by free block of size 344                                                               
+Degree of Fragmentation: 17                                                                                                                      
+request at t=1997 for i=285, size(i)=5 pages, satisfied by free block of size 390                                                                
+request at t=2026 for i=118, size(i)=18 pages, satisfied by free block of size 250                                                               
+request at t=2031 for i=287, size(i)=7 pages, satisfied by free block of size 457                                                                
+request at t=2034 for i=364, size(i)=4 pages, satisfied by free block of size 437                                                                
+request at t=2038 for i=127, size(i)=7 pages, satisfied by free block of size 275                                                                
+request at t=2040 for i=119, size(i)=19 pages, satisfied by free block of size 209                                                               
+request at t=2043 for i=172, size(i)=12 pages, satisfied by free block of size 344                                                               
+request at t=2046 for i=189, size(i)=9 pages, satisfied by free block of size 289                                                                
+Degree of Fragmentation: 21                                                                                                                      
+Degree of Fragmentation: 0  
+```
