@@ -11,7 +11,7 @@
 
 
 
-
+### Part 2
 >Part 2 uses First Fit allocation algorithm to allocate the incoming processes to memory
 
 >Memory size and block size is randomized (in between a set range) each time it is run to simulate different sized memory
