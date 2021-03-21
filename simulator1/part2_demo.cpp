@@ -11,9 +11,10 @@
 using namespace std;
 
     Part1 test = Part1();
-    //first fit 
+    //first fit allocation algorithm 
     int allocate_process (int size, int PID, int numBlocks,int memory[], int memorySize [], int processSize[]) {
         int i;
+        //checks from the start of the array for an empty block, and allocates the process on the first empty block that fits  
         for (i = 0; i < numBlocks; i++) {
             if (memory[i] == -1 && memorySize[i] >= size) {
                 memory[i] = PID;
@@ -21,6 +22,7 @@ using namespace std;
                 break;
             }
         }
+        //if no empty block was found that fits the process   
         if (i >= numBlocks) {
             printf("Process was not allocated\n");
             return size;
@@ -29,7 +31,8 @@ using namespace std;
         printf("request at t=%d for i=%d, size(i)=%d pages, satisfied by free block of size %d\n", int(clock()), size, test.size(size), memorySize[i]);
         return 0;
     }
-    
+
+    //returns the degree of internal fragmentation  
     int degreeFragmentation(int numBlocks, int memory[], int memorySize[], int processSize[]) {
         int fragmentation = 0;
         for (int i = 0; i < numBlocks; i++) {
@@ -40,6 +43,7 @@ using namespace std;
         return fragmentation / numBlocks;
     }
 
+    //dealocated the process by its PID
     int deallocate_process (int PID,int numBlocks, int memory[], int memorySize[], int processSize[]) {
         int i;
         for (i = 0; i < numBlocks; i++) {
@@ -63,17 +67,19 @@ int main()
     // array -> memory
     int numPages = 1000 + (rand() % 99000);
     int numBlocks = numPages / 200; //how many pages, on average, are in one block?
-    int memory[numBlocks];
+    
+    //represent the memory
+    int memory[numBlocks]; //has the PID's of the processes
 
-    int memorySize[numBlocks];
+    int memorySize[numBlocks]; //has the size of the blocks
 
-    int processSize[numBlocks];
+    int processSize[numBlocks]; //has the size of the process ruuning in its corressponding block
     
 
     //initializing memory
     for (int i = 0; i < numBlocks; i++) {
         memory[i] = -1;
-        memorySize[i] = 64 + (rand() % 400);
+        memorySize[i] = 64 + (rand() % 400); //each block has a randomized size in between a certain range
         processSize[i] = 0;
     }
     //list current Processes
@@ -81,6 +87,7 @@ int main()
 
 
     int PID = 0;
+    //creates new processes with a random size and allocates/deallocates them 
     for (int n = 0; n < rand() % 20; n++) {
         int numProcess = rand() % 25;
         for (int i = 0; i < numProcess; i++) {
@@ -98,7 +105,7 @@ int main()
         cout << "Degree of Fragmentation: " << degreeFragmentation(numBlocks,memory,memorySize, processSize) << endl;
 
     }
-
+    //deallocates all remaining processes 
     while (!currentProcesses.empty()) {
         deallocate_process(currentProcesses.back(), numBlocks, memory, memorySize, processSize);
         currentProcesses.pop_back();
@@ -108,7 +115,5 @@ int main()
 
     return 0;
 
-    //request at t=1738 for i=33, size(i)=12 pages,
-    //   satisfied by free block of size 32 starting at 8056 leaving 20 pages as 1x16 + 2x2
 }
 */
