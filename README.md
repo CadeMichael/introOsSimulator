@@ -4,7 +4,7 @@
 
 | person | role | 
 | --- | --- | 
-| Cade Lueker | part 1 and the graph. | 
+| Cade Lueker | part one and the graph. | 
 | Isabella Robert Llorens | part two and getting nice output. |
 
 > we both worked with eachother on the respective parts to edit/ offer suggestions it was a very 50/50 partnership.
@@ -15,6 +15,8 @@
 | number of free vs Size of request |
 | --- |
 | ![graph image](./graph.png) |
+
+- this makes sense intuitively as the smaller the size of the current request the more likely it is to be added.
 
 - **Part 2** uses First Fit allocation algorithm to allocate the incoming processes to memory
     - Memory size and block size is randomized (in between a set range) each time it is run to simulate different sized memory
