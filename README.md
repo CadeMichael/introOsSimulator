@@ -23,6 +23,7 @@
     - The amount and size of incoming processes is also randomized
 
 > Sample Outputs for Part 2
+>> to run part two you must comment out or remove the main function from part one and uncomment the main function from part two this is described in each file
 
 > 1
 ```request at t=1660 for i=230, size(i)=10 pages, satisfied by free block of size 424                                                               
