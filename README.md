@@ -12,7 +12,6 @@
 - **Part 1** uses random integers to determine the block size of requests and the number of requests that take place. When running the simulation we try to run a series of requests followed by a series of 'free()'s to see how likely it is that memory is avliable under different conditions.
     - we tried to visualize this using python scripting in jupyter notebook
 
-<<<<<<< HEAD
 | number of free vs Size of request |
 | --- |
 | ![graph image](./graph.png) |
@@ -20,16 +19,7 @@
 - **Part 2** uses First Fit allocation algorithm to allocate the incoming processes to memory
     - Memory size and block size is randomized (in between a set range) each time it is run to simulate different sized memory
     - The amount and size of incoming processes is also randomized
-=======
 
-### Part 2
->Part 2 uses First Fit allocation algorithm to allocate the incoming processes to memory
-
->Memory size and block size is randomized (in between a set range) each time it is run to simulate different sized memory
-
->The amount and size of incoming processes is also randomized
-
->>>>>>> 0ecaebe67a7c79ab414be65ad8e4e30ad59ed9f3
 > Sample Outputs for Part 2
 
 > 1
