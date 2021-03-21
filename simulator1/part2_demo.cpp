@@ -53,6 +53,8 @@ using namespace std;
         return 0;
     }
     
+/* this is commented out when running the part 1 file in the jupyter notebook, simply comment out the int main() 
+ * in part1a and uncomment this main to see how this function works
 int main()
 {
     //* initialize random seed: *
@@ -109,4 +111,4 @@ int main()
     //request at t=1738 for i=33, size(i)=12 pages,
     //   satisfied by free block of size 32 starting at 8056 leaving 20 pages as 1x16 + 2x2
 }
-
+*/
